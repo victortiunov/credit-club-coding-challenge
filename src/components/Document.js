@@ -8,7 +8,7 @@ export const Document = document => {
     return (
         <FiltersContext.Consumer>
             {context => (
-                <div className='document'>
+                <li className='document'>
                     <div className={`document__head ${signedDate ? 'document__head_signed' : ''}`}>
                         <div className='document__title'>{getHighlightedText(title, context.searchText, highlightClassName)}</div>
                         {signedDate && <div className='document__signed-date'>{`Date of signing: ${formatDate(signedDate)}`}</div> }
@@ -20,7 +20,7 @@ export const Document = document => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </li>
             )}
         </FiltersContext.Consumer>
     )

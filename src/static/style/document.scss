@@ -10,6 +10,8 @@ $filter_border: 1px solid #ececec;
     box-sizing: border-box;
     height: calc(100% - #{$filters_height});
     overflow: auto;
+    list-style-type: none;
+    padding-left: 0;
 
     .document {
         margin-bottom: 10px;

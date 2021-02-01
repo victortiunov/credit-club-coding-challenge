@@ -31,9 +31,9 @@ export const DocumentsList = data => {
         <FiltersContext.Provider value={contextValue}>
             <div className='documents' style={{height: documentsHeight}}>
                 <Filters />
-                <div className='documents-list'>
+                <ul className='documents-list'>
                     {filterDocuments(documents, filterUsers, currentUserId, searchText, signedBy).slice(0, 20).map(document => <Document key={document.id} {...document} />)}
-                </div>
+                </ul>
             </div>
         </FiltersContext.Provider>
     );
