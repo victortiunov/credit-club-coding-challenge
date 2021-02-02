@@ -40,8 +40,6 @@ const filterBySigned = (documents, signedBy) => {
 };
 
 export const getHighlightedText = (original, searchText, className) => {
-    return original;
-    /*
     const founds = [...original.matchAll(new RegExp(searchText, 'ig'))];
     if (founds.length === 0) {
         return original;
@@ -61,7 +59,7 @@ export const getHighlightedText = (original, searchText, className) => {
             {elements}
         </React.Fragment>
     );
-     */
+
 };
 
 const FILTER_USERS = Object.freeze({

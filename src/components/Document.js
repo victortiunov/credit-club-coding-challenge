@@ -1,14 +1,17 @@
 import React from 'react';
 import {FiltersContext, formatDate, getHighlightedText, participantName} from '../tools';
 
-export const Document = document => {
+export const Document = ({document, style}) => {
+    if (!document) {
+        return null;
+    }
     const {title, signedDate, participants} = document;
     const highlightClassName = 'highlighted';
 
     return (
         <FiltersContext.Consumer>
             {context => (
-                <li className='document'>
+                <div className='document' style={style}>
                     <div className={`document__head ${signedDate ? 'document__head_signed' : ''}`}>
                         <div className='document__title'>{getHighlightedText(title, context.searchText, highlightClassName)}</div>
                         {signedDate && <div className='document__signed-date'>{`Date of signing: ${formatDate(signedDate)}`}</div> }
@@ -20,7 +23,7 @@ export const Document = document => {
                             </div>
                         ))}
                     </div>
-                </li>
+                </div>
             )}
         </FiltersContext.Consumer>
     )
