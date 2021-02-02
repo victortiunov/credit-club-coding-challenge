@@ -1,5 +1,6 @@
 $filters_height: 75px;
-$filter_border: 1px solid #ececec;
+$default_color: #ececec;
+$filter_border: 1px solid $default_color;
 
 .documents {
     width: 550px;
@@ -9,10 +10,19 @@ $filter_border: 1px solid #ececec;
 .documents-list {
     box-sizing: border-box;
     height: calc(100% - #{$filters_height});
+
+    &-no-data {
+        height: 100px;
+        background-color: $default_color;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .document {
-    background-color: #ececec;
+    background-color: $default_color;
     padding: 10px;
     box-sizing: border-box;
     border-bottom: 10px solid #ffffff;

@@ -58,17 +58,20 @@ export const DocumentsList = data => {
             <div className='documents' style={{height: documentsHeight}}>
                 <Filters />
                 <div className='documents-list'>
-                    <AutoSizer>
-                        {({width, height}) => <List
-                            width={width}
-                            height={height}
-                            deferredMeasurementCache={cache}
-                            rowHeight={cache.rowHeight}
-                            rowRenderer={renderRow}
-                            rowCount={filteredDocuments.length}
-                            overscanRowCount={5}
-                        />}
-                    </AutoSizer>
+                    {filteredDocuments.length > 0 ?
+                        <AutoSizer>
+                            {({width, height}) => <List
+                                width={width}
+                                height={height}
+                                deferredMeasurementCache={cache}
+                                rowHeight={cache.rowHeight}
+                                rowRenderer={renderRow}
+                                rowCount={filteredDocuments.length}
+                                overscanRowCount={5}
+                            />}
+                        </AutoSizer> :
+                        <div className='documents-list-no-data'>No data found...</div>
+                    }
                 </div>
             </div>
         </FiltersContext.Provider>
